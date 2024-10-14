@@ -1,0 +1,158 @@
+*, select, button, label, input {
+	font-size: 14px;
+}
+
+body {
+	margin: 0px;
+	background-color:#008080;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+}
+select {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+h4, h6 {
+	margin: 0px;
+}
+
+#logout-btn {
+	font-size: 10px;
+}
+#offline-tab {
+	border: 0px;
+}
+#input-list {
+	height: 380px;
+	overflow: auto;
+}
+#window-content {
+	margin: 10px;
+}
+#tournament-btn {
+	margin: 20px;
+}
+#bracket {
+	width: 950px;
+	height: 600px;
+}
+#online-body {
+	height: 540px;;
+	margin-top: 30px;
+	overflow-y: auto;
+}
+#room-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#waiting-room {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 100%;
+	width: 100%;
+}
+#quit {
+	height: 100%;
+}
+#lang-option {
+	width: 0px;
+}
+#status-bar p {
+	height: 30px;
+}
+
+.sign-in-input {
+	display: grid;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.content {
+	width: 990px;
+	height: 640px;
+	padding: 20px;
+}
+.sign {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.btn-list {
+	display: flex;
+	justify-content: space-between;
+	width: 500px;
+	margin-top: 20px;
+}
+.room {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100px;
+	width: 70%;
+	margin: 5px;
+}
+.room-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 100%;
+	flex-grow: 1;
+}
+.room-password {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 130px;
+}
+.room-btn {
+	height: 100%;
+}
+.input {
+	height: 30px;
+}
+.setting {
+	width: 450px;
+}
+.row-1 {
+	height: 70%;
+	width: 100%;
+}
+.flex-container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.item-1 {
+	flex-grow: 1;
+}
+.item-2 {
+	height: 15%;
+}
+.row-2 {
+	height: 10%;
+	width: 70%;
+}
+.room-btns {
+	height: 100%;
+}
+.field-row-stacked {
+	width: 200px;
+}
+.field-row {
+	justify-content: flex-end;
+}

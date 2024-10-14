@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="./image/favicon.png">
+	<!-- Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<!-- 98css -->
+	<link rel="stylesheet" href="https://unpkg.com/98.css">
+	<!-- My style -->
+	<link rel="stylesheet" href="./style.css">
+	<title>핑퐁팡퐁</title>
+</head>
+<body>
+	<div id="window" class="window">
+		<div class="title-bar">
+			<div class="title-bar-text">핑퐁팡퐁</div>
+			<div class="title-bar-controls">
+				<button id="logout-btn" style="display: none;">로그아웃</button>
+				<button aria-label="Minimize"></button>
+				<button aria-label="Maximize"></button>
+				<button aria-label="Close"></button>
+			</div>
+		</div>
+		<div id="sign" style="display: none;">
+			<div id="sign-in-content" class="content sign">
+				<div id="sign-in-input" class="sign-in-input">
+					<label id="sign-in-id-label" class="id" for="sign-in-id">아이디</label>
+					<input id="sign-in-id" type="text"/>
+					<label id="sign-in-password-label" class="password" for="sign-in-password">비밀번호</label>
+					<input id="sign-in-password" type="password"/>
+					<button id="sign-in-2factor" class="code">인증하기</button>
+					<label id="sign-in-code-label" class="code-label" for="sign-in-code" style="margin-top: 10px">인증코드</label>
+					<input id="sign-in-code" type="text"/>
+					<button id="sign-in-submit" class="submit">확인</button>
+				</div>
+				<div id="42-sign-in-input" class="sign-in-input"style="display: none;">
+					<label class="code-label" for="42-sign-in-code">인증코드</label>
+					<input id="42-sign-in-code" type="text" />
+					<button id="42-sign-in-submit" class="code">인증하기</button>
+				</div>
+				<div id="sign-btns">
+					<button id="sign-in-btn">일반 로그인</button>
+					<button id="sign-in-42-btn">42로 로그인</button>
+					<button id="sign-up-btn">회원가입</button>
+				</div>
+			</div>
+			<div id="sign-up-content" class="content sign" style="display: none;">
+				<div id="sign-up-input-list" style="display: grid;">
+					<label id="sign-up-id-label" class="id" for="sign-up-id">아이디</label>
+					<input id="sign-up-id" type="text"/>
+					<label id="sign-up-password-label" class="password" for="sign-up-password">비밀번호</label>
+					<input id="sign-up-password" type="password" />
+					<label id="sign-up-check-password-label" for="sign-up-check-password">비밀번호 확인</label>
+					<input id="sign-up-check-password" type="password" />
+					<label id="sign-up-email-label" for="sign-up-email">이메일</label>
+					<div>
+						<input id="sign-up-email" type="email" />
+						<button id="sign-up-email-btn" class="code">인증하기</button>
+					</div>
+					<div id="email-info">
+						메일주소가 정확한지 확인해주세요.<br /><br />
+					</div>
+					<label id="sign-up-code-label" class="code-label" for="sign-up-code" style="display: none;">인증코드</label>
+					<div id="sign-up-code" style="display: none;">
+						<input id="sign-up-code-input" type="text"/>
+						<button id="sign-up-code-btn">인증확인</button>
+					</div>
+				</div>
+				<div id="sign-up-btn-list" class="btn-list">
+					<button id="sign-up-cancel">뒤로가기</button>
+					<button id="sign-up-submit" class="submit" style="display: none;">확인</button>
+				</div>
+			</div>
+		</div>
+		<div id="window-content" style="display: none;">
+			<menu id="nav" class="nav" role="tablist">
+				<li id="offline-tab" class="nav-item" role="tab" data-tab-section="offline">
+					<a>오프라인 플레이</a>
+				</li>
+				<li id="tournament-tab" class="nav-item" role="tab" data-tab-section="tournament">
+					<a>토너먼트</a>
+				</li>
+				<li id="online-tab" class="nav-item" role="tab" data-tab-section="online">
+					<a>온라인 플레이</a>
+				</li>
+			</menu>
+			<div class="window content" role="tabpanel">
+				<canvas id="bracket" style="display: none;"></canvas>
+				<div id="content"></div>
+				<div id="offline">
+					<p id="offline-info">오프라인 플레이 진행을 위해 플레이어의 이름과 게임 포인트를 입력합니다.<br>플레이어의 이름은 4글자 이상, 20글자 이하만 가능하며, 게임 포인트는 2점이상 20점이하만 가능합니다.<br></p>
+					<p id="offline-input1">
+						<label id="name-input1-label" for="name-input1">1 번째 플레이어 이름</label>
+						<input id="name-input1" type="text" required />
+					</p>
+					<p id="offline-input2">
+						<label id="name-input2-label" for="name-input2">2 번째 플레이어 이름</label>
+						<input id="name-input2" type="text" required />
+					</p>
+					<p>
+						<label id="offline-game-point-label" class="game-point-text" for="offline-game-point">게임 포인트</label>
+						<input id="offline-game-point" class="game-point" value="10" type="number" min="2" max="20" required />
+					</p>
+					<section class="field-row">
+						<button id="offline-submit" class="submit">확인</button>
+					</section>
+				</div>
+				<div id="tournament" style="display: none;">
+						<p id="tournament-info">토너먼트 진행을 위해 게임 포인트와 인원 수를 결정하고, 플레이어의 이름을 입력합니다. 게임 포인트는 2점 이상 20점 이하만 가능하며, 플레이어의 이름은 4글자 이상, 20글자 이하만 가능합니다.</p>
+						<p>
+							<label id="tournament-game-point-label" class="game-point-text" for="tournament-game-point">게임 포인트</label>
+							<input id="tournament-game-point" class="game-point" value="10" type="number" min="2" max="20" required />
+						</p>
+						<p>
+							<label id="num-people" for="select-num">인원 수</label>
+							<select id="select-num" required>
+								<option id="index-0" value="0">인원 수를 선택해 주세요.</option>
+								<option value="4">4</option>
+								<option value="8">8</option>
+								<option value="16">16</option>
+							</select>
+						</p>
+						<div id="input-list"></div>
+						<section id="tournament-btn" class="field-row"> </section>
+				</div>
+				<div id="online" style="display: none;">
+					<div id="online-top">
+						<input id="search-input" type="text" />
+						<select id="search-option">
+							<option id="search-option-room" value="room">방 이름</option>
+							<option id="search-option-user" value="user">아이디</option>
+						</select>
+						<button id="search-btn">검색</button>
+						<button id="refresh-btn">새로고침</button>
+						<button id="make-room-btn">방 만들기</button>
+					</div>
+					<div id="online-body">
+						<div id="room-list"></div>
+					</div>
+				</div>
+				<div id="room-setting" style="display: none;">
+					<p id="online-info">온라인 플레이를 위해 방을 설정하고 생성합니다.</p>
+					<p>
+						<div class="field-row-stacked">
+						<label id="online-room-name-label" for="online-room-name">방 이름</label>
+								<input id="online-room-name" type="text" required />
+							</div>
+							<div class="field-row-stacked">
+								<label id="online-game-point-label" class="game-point-text" for="online-game-point">게임 포인트</label>
+								<input id="online-game-point" class="game-point" value="10" type="number" min="2" max="20" required />
+							</div>
+							<div class="field-row-stacked">
+								<label id="online-password-label" class="password" for="online-password">비밀번호</label>
+								<input id="online-password" type="password" />
+							</div>
+						</p>
+						<section class="field-row">
+							<button id="online-room-submit" class="submit">확인</button>
+							<button id="online-room-cancel">취소</button>
+						</section>
+				</div>
+				<div id="waiting-room" style="display: none;">
+					<div class="row row-1">
+						<div class="col-md-6">
+							<div class="window flex-container">
+								<div class="window item item-1">
+									<h4 id="host-name" ></h4>
+								</div>
+								<div class="item item-2">
+									<h6 id="host-status"></h6>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="window flex-container">
+								<div class="window item item-1">
+									<h4 id="guest-name"></h4>
+								</div>
+								<div class="item item-2">
+									<h6 id="guest-status"></h6>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row row-2">
+						<button id="ready" class="col">준비</button>
+						<button id="quit" class="col">나가기</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="status-bar">
+			<p id="left-player" class="status-bar-field"></p>
+			<p id="right-player" class="status-bar-field"></p>
+			<p id="show-game-point" class="status-bar-field">게임 포인트: </p>
+			<p id="lang-option" class="status-bar-field">
+					<select id="lang-select">
+						<option value="ko">한국어</option>
+						<option value="en">English</option>
+						<option value="jp">日本語</option>
+					</select>
+			</p>
+		</div>
+		<!-- Bootstrap -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+		<!-- Three.js -->
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+					"three/addons/": "https://cdn.jsdelivr.net/npm/three/examples/jsm/"
+				}
+			}
+		</script>
+		<!-- My script -->
+		<script type="module" src="script/login.js"></script>
+		<script type="module" src="script/tab.js"></script>
+		<script type="module" src="script/lang.js"></script>
+		<script type="module" src="script/content/offline.js"></script>
+		<script type="module" src="script/content/tournament.js"></script>
+		<script type="module" src="script/content/online.js"></script>
+	</body>
+</html>
