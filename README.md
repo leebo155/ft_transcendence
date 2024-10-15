@@ -11,6 +11,7 @@
 * 구현된 웹 사이트는 외부 라이브러리의 도움없이 [Single Page Application](https://en.wikipedia.org/wiki/Single-page_application)을 경험할 수 있도록 만들었습니다.
 * 모든 서비스는 도커 컨테이너로 구현되어 도커 컴포즈를 사용하여 간단하게 빌드 가능합니다.
 
+
 ### Used Technologies
 
   #### Front-End
@@ -29,10 +30,18 @@
     User, 2FA, JWT blacklist 등 사용자의 인증과 관리를 위하여 사용합니다.
   * Redis   
     게임 전 대기방, 즉 Room을 관리하는 Room Manager의 역할을 위하여 사용합니다. 또한 Django Channels 라이브러리의 채널 레이어에 사용됩니다.
-    
-### Simple flowchart of process
 
-<img alt="flow" src="https://github.com/leebo155/ft_transcendence/blob/main/img/readme/transcendence_flow.jpg">
+    
+### Flow Diagram
+
+<img alt="flowchart" src="https://github.com/leebo155/ft_transcendence/blob/main/img/readme/transcendence_flow.jpg">
+
+
+### WebSocket Communication Diagram
+
+<img alt="flowchart" src="https://github.com/leebo155/ft_transcendence/blob/main/img/readme/pingpong_websocket_1.jpg">
+<img alt="flowchart" src="https://github.com/leebo155/ft_transcendence/blob/main/img/readme/pingpong_websocket_2.jpg">
+<img alt="flowchart" src="https://github.com/leebo155/ft_transcendence/blob/main/img/readme/pingpong_websocket_3.jpg">
 
 ### Made by
 |<img src="https://github.com/leebo155.png" width=240>|<img src="https://github.com/juhyeonlee134.png" width="240">|<img src="https://github.com/jmsmg.png" width=240>|
@@ -65,7 +74,7 @@
   JWT_SECRET= #Django Secret
   OAUTH_TOKEN_URL=https://api.intra.42.fr/oauth/token
   OAUTH_PROFILE_URL=https://api.intra.42.fr/v2/me
-  OAUTH_REDIRECT_URL= #OAUTH_URL에서 리다이렉션 될 URL
+  OAUTH_REDIRECT_URL=https://$SERVER_HOST/user/oauth/ #42API에도 동일하게 등록
   OAUTH_UID= #42API에서 발급받은 UID
   OAUTH_SECRET= #42API에서 발급받은 SECRET
   OAUTH_URL= #42API에서 발급받은 URL
@@ -79,6 +88,7 @@
 * **.private.key**   
   인증서 키
 
+
 ### Makefile
 | Rules | Description |
 | ----- | ----------- |
@@ -88,6 +98,7 @@
 | clean | Terminate created Docker containers. |
 | fclean | Remove all created Docker containers and images. |
 | re | Recreate Docker containers and images after removing them. |
+
 
 ## Screenshots
 
