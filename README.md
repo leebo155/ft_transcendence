@@ -84,9 +84,15 @@
   REDIS_PORT=6379
   ```
 * **.private.crt**   
-  인증서
+  인증서 생성 예시
+  ```shell
+  openssl req -new -newkey rsa:2048 -nodes -keyout private.key -out private.csr -subj "/C=KR/L=Seoul/O=?/OU=?/CN=?"
+  ```
 * **.private.key**   
-  인증서 키
+  인증서 키 생성 예시
+  ```shell
+  openssl x509 -req -days 365 -in ./private.csr -signkey private.key -out private.crt
+  ```
 
 
 ### Makefile
