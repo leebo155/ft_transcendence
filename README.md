@@ -46,7 +46,7 @@
 ### Made by
 |<img src="https://github.com/leebo155.png" width=240>|<img src="https://github.com/juhyeonlee134.png" width="240">|<img src="https://github.com/jmsmg.png" width=240>|
 |:--:|:--:|:--:|
-|[Bohyeong Lee](https://github.com/bohlee)|[juhyeonlee](https://github.com/juhyeonlee134)|[Seonggon, Cho](https://github.com/Jmsmg)|
+|[Bohyeong Lee](https://github.com/leebo155)|[juhyeonlee](https://github.com/juhyeonlee134)|[Seonggon, Cho](https://github.com/Jmsmg)|
 |Back|Front|Back|
 
 ## Usage
